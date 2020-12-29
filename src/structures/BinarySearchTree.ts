@@ -30,7 +30,7 @@ export default class BinarySearchTree {
 
         while (true) {
             if (value === current.data) return undefined;
-            // If there is a root, check if the value of the new node is greater than or less than the value of the root
+            // If there is a root, withFrequencies if the value of the new node is greater than or less than the value of the root
             if (value < current.data) {
                 // Check to see if there is a node to the left
                 if (!current.left) {
@@ -58,7 +58,7 @@ export default class BinarySearchTree {
         // Check if there is a root, if not - we're done searching
         if (this.root) {
             let current = this.root;
-            // If there is a root, check if the value of the new node is the value we are looking for.
+            // If there is a root, withFrequencies if the value of the new node is the value we are looking for.
             while (current) {
                 if (value < current.data) {
                     // If less, go left
@@ -98,6 +98,13 @@ export default class BinarySearchTree {
         }
         // Return the variable that store the values
         return visited;
+    }
+
+    /**
+     * Level Order Search
+     */
+    levelOrder() {
+        return this.breadthFirstSearch();
     }
 
     /**

@@ -18,6 +18,12 @@ export default class Graph {
         }
     }
 
+    addDirectedEdge(v1: string, v2: string){
+        if (this.adjacencyList[v1] && this.adjacencyList[v2]) {
+            this.adjacencyList[v1].push(v2);
+        }
+    }
+
     removeEdge(v1: string, v2: string) {
         if (this.adjacencyList[v1] && this.adjacencyList[v2]) {
             this.adjacencyList[v1].splice(this.adjacencyList[v1].indexOf(v2), 1);

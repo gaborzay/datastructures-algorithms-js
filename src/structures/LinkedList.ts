@@ -5,7 +5,7 @@ export default abstract class LinkedList {
     protected tail: Node;
     protected length: number;
 
-    protected constructor(arr: [] = []) {
+    protected constructor(arr: Array<any> = []) {
         this.head = null;
         this.tail = null;
         this.length = 0;

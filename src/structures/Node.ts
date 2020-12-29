@@ -1,3 +1,5 @@
+//todo split out different types of nodes
+// singlylinkednode, doublelylinkednode, binarytreenode, graph node...
 export default class Node {
     public data: any;
     public priority: number;

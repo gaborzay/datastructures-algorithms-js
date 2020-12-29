@@ -20,7 +20,7 @@ export default class SinglyLinkedList extends LinkedList {
     protected tail: Node;
     protected length: number;
 
-    constructor(arr: [] = []) {
+    constructor(arr: Array<any> = []) {
         super(arr);
     }
 
