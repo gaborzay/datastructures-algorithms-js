@@ -9,9 +9,9 @@ function getComparator(comparator) {
 }
 
 export function selectionSort(arr, comparator) {
-  comparator = getComparator(comparator);
   const n = arr.length;
   let minIndex = 0;
+  comparator = getComparator(comparator);
 
   for (let i = 0; i < n; i++) {
     minIndex = i;
@@ -42,13 +42,11 @@ export function insertionSort(arr, comparator) {
   comparator = getComparator(comparator);
 
   for (let i = 1, n = arr.length; i < n; i++) {
-    let currentIndex = i;
-    let previousIndex = i - 1;
-    while (previousIndex > -1 &&
-    comparator(arr[previousIndex], arr[currentIndex]) > 0) {
-      swap(arr, previousIndex, currentIndex);
-      previousIndex--;
-      currentIndex--;
+    let currIndex = i,
+        prevIndex = i - 1;
+
+    while (prevIndex > -1 && comparator(arr[prevIndex], arr[currIndex]) > 0) {
+      swap(arr, prevIndex--, currIndex--);
     }
   }
 
@@ -56,28 +54,24 @@ export function insertionSort(arr, comparator) {
 }
 
 export function merge(arr1, arr2, comparator) {
+  let n = arr1.length,
+      m = arr2.length,
+      i = 0,
+      j = 0,
+      result = [];
   comparator = getComparator(comparator);
-  let n = arr1.length;
-  let m = arr2.length;
-  let i = 0;
-  let j = 0;
-  let result = [];
 
   while (i < n || j < m) {
     if (i < n && j < m) {
       if (comparator(arr1[i], arr2[j]) > 0) {
-        result.push(arr2[j]);
-        j++;
+        result.push(arr2[j++]);
       } else {
-        result.push(arr1[i]);
-        i++;
+        result.push(arr1[i++]);
       }
     } else if (i < n) {
-      result.push(arr1[i]);
-      i++;
+      result.push(arr1[i++]);
     } else if (j < m) {
-      result.push(arr2[j]);
-      j++;
+      result.push(arr2[j++]);
     }
   }
 
@@ -86,8 +80,8 @@ export function merge(arr1, arr2, comparator) {
 
 export function mergeSort(arr, comparator) {
   const middle = Math.floor(arr.length / 2);
-  let left = arr.slice(0, middle);
-  let right = arr.slice(middle);
+  let left = arr.slice(0, middle),
+      right = arr.slice(middle);
 
   if (left.length > 1) left = mergeSort(left, comparator);
   if (right.length > 1) right = mergeSort(right, comparator);
