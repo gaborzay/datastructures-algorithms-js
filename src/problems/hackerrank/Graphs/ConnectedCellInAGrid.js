@@ -17,7 +17,7 @@ export function maxRegion(grid) {
     generateAdjacencyList(grid) {
       for (let row = 0, n = grid.length; row < n; row++) {
         for (let col = 0, m = grid[row].length; col < m; col++) {
-          const vertexName = this.getName(row, col);
+          const vertexName = [row, col];
           this.addVertex(vertexName);
           // Only add edge if a 1
           if (grid[row][col] !== 0) {
@@ -47,7 +47,7 @@ export function maxRegion(grid) {
           for (let j = col - 1; j < col + 2; j++) {
             // See if col exists
             if (j > -1 && grid[i][j]) {
-              const currentVertexName = this.getName(i, j);
+              const currentVertexName = [i, j];
               // Only add 1 and don't add self
               if (currentVertexName !== vertexName && grid[i][j] === 1) {
                 this.addEdge(vertexName, currentVertexName);
@@ -56,10 +56,6 @@ export function maxRegion(grid) {
           }
         }
       }
-    }
-
-    getName(row, col) {
-      return `${row}-${col}`;
     }
 
     dfs(start) {

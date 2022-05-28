@@ -1,4 +1,5 @@
 /node_modules/
 .idea
-/src/problems/amazon/
-/tests/problems/amazon/
+/src/problems/
+/tests/problems/
+/public/js/problems/

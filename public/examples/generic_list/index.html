@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h3>Controls: </h3>
+<form action="#" id="form">
+    <div>
+        <label for="node-value">Value:</label>
+        <input type="text" id="node-value">
+        <button id="controller-push">Push</button>
+        <button id="controller-unshift">Unshift</button>
+    </div>
+    <div>
+        <label for="node-index">Index:</label>
+        <input type="number" id="node-index">
+        <button id="controller-get">Get</button>
+        <button id="controller-insert">Insert</button>
+        <button id="controller-remove">Remove</button>
+    </div>
+    <div>
+        <button id="controller-pop">Pop</button>
+        <button id="controller-shift">Shift</button>
+    </div>
+    <div>
+        <button id="controller-get-head">Get Head</button>
+        <button id="controller-get-tail">Get Tail</button>
+        <button id="controller-reverse">Reverse</button>
+    </div>
+</form>
+
+<table width="100%">
+    <thead>
+    <tr>
+        <th>Counter</th>
+        <th>Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>
+            <h3 id="counter" class="counter"></h3>
+        </td>
+        <td>
+            <ul id="output"></ul>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<table width="100%">
+    <thead>
+    <tr>
+        <th>Singly Linked List</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>
+            <ul id="singly-linked-list"></ul>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<script type="module" src="../../js/examples/generic_list/index.js" async defer></script>
+</body>
+</html>

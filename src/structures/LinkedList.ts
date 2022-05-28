@@ -13,6 +13,14 @@ export default abstract class LinkedList {
         arr.forEach(element => this.push(element));
     }
 
+    getHead(): Node {
+        return this.head;
+    }
+
+    getTail(): Node {
+        return this.tail;
+    }
+
     /**
      * Add an item to the end of the linked list.
      *

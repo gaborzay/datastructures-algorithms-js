@@ -4,18 +4,26 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "ts": "tsc -w",
+    "serve": "cd public && web-dev-server --node-resolve --watch --open --app-index ./testing/index.html",
+    "serve-generic": "cd public && web-dev-server --node-resolve --watch --open --app-index ./examples/generic_list/index.html",
+    "dev": "yarn run ts & yarn run serve",
+    "dev-generic": "yarn run ts & yarn run serve-generic"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "requirejs": "^2.3.6",
     "typescript": "^3.9.5"
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",
     "@babel/preset-env": "^7.10.2",
     "@babel/preset-typescript": "^7.10.1",
+    "@types/node": "^17.0.31",
+    "@web/dev-server": "^0.1.31",
     "babel-jest": "^26.0.1",
     "jest": "^26.0.1",
     "jest-cli": "^26.0.1"
