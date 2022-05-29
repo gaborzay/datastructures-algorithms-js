@@ -5,11 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "ts": "tsc -w",
-    "serve": "cd public && web-dev-server --node-resolve --watch --open --app-index ./testing/index.html",
+    "ts": "tsc -w --skipLibCheck",
+    "serve": "cd public && web-dev-server --node-resolve --watch --open --app-index index.html",
     "serve-generic": "cd public && web-dev-server --node-resolve --watch --open --app-index ./examples/generic_list/index.html",
+    "serve-dnd": "cd public && web-dev-server --node-resolve --watch --open --app-index ./examples/drag_and_drop/index.html",
     "dev": "yarn run ts & yarn run serve",
-    "dev-generic": "yarn run ts & yarn run serve-generic"
+    "dev-generic": "yarn run ts & yarn run serve-generic",
+    "dev-dnd": "yarn run ts & yarn run serve-dnd"
   },
   "keywords": [],
   "author": "",
